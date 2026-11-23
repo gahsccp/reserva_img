@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Adaptação da página para diferentes tamanhos de tela -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Neon Collector 3 Arquivos+img</title>
+
+  <!-- Conexão com o arquivo CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Interface principal do jogo -->
+  <main class="game-wrapper">
+    <!-- Nome do jogo -->
+    <h1>Neon Collector</h1>
+
+    <!-- Breve descrição do objetivo do jogo -->
+    <p class="description">
+      Colete todos os cristais de energia e desvie dos drones vermelhos.
+    </p>
+
+    <!-- Painel com os indicadores atuais do jogo -->
+    <div class="panel">
+      <span>Pontuação: <strong id="score">0</strong></span>
+      <span>Cristais: <strong id="remaining">0</strong></span>
+      <span>Vidas: <strong id="lives">3</strong></span>
+    </div>
+
+    <!-- Campo de jogo -->
+    <canvas id="gameCanvas" width="800" height="500"></canvas>
+
+    <!-- Dica de controles -->
+    <div class="controls">
+      Use as setas do teclado para se mover
+    </div>
+  </main>
+
+  <!-- Tela de resultado que aparece após a vitória ou derrota -->
+  <div class="overlay" id="overlay">
+    <div class="message-box">
+      <h2 id="resultTitle">Você venceu!</h2>
+      <p id="resultText"></p>
+      <button id="restartButton">Jogar novamente</button>
+    </div>
+  </div>
+
+  <!-- Conexão com o arquivo JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+</html>

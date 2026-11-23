@@ -1,0 +1,212 @@
+/* ==================================================
+   CONFIGURAÇÕES BÁSICAS DA PÁGINA
+   Este bloco zera as margens padrão e define o plano
+   de fundo, a fonte e o posicionamento da interface.
+   ================================================== */
+
+- {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: white;
+  background:
+    radial-gradient(
+      circle at top,
+      #172554 0%,
+      #090b1a 45%,
+      #03040a 100%
+    );
+}
+
+
+/* ==================================================
+   CONTÊINER PRINCIPAL DO JOGO
+   Este bloco controla a largura e o posicionamento
+   de todos os elementos principais do jogo.
+   ================================================== */
+
+.game-wrapper {
+  width: min(94vw, 850px);
+  text-align: center;
+}
+
+
+/* ==================================================
+   TÍTULO E DESCRIÇÃO DO JOGO
+   Este bloco estiliza o título e o texto com o
+   objetivo do jogo.
+   ================================================== */
+
+h1 {
+  margin: 0 0 8px;
+  color: #67e8f9;
+  font-size: clamp(28px, 5vw, 44px);
+  text-shadow:
+    0 0 8px #06b6d4,
+    0 0 22px #06b6d4;
+}
+
+.description {
+  margin: 0 0 16px;
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+
+/* ==================================================
+   PAINEL DE PONTUAÇÃO
+   Este bloco estiliza a pontuação, a quantidade de
+   cristais e as vidas restantes do jogador.
+   ================================================== */
+
+.panel {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  border: 1px solid rgba(103, 232, 249, 0.5);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  box-shadow: 0 0 18px rgba(6, 182, 212, 0.18);
+}
+
+.panel span {
+  font-weight: bold;
+}
+
+.panel strong {
+  color: #fde047;
+}
+
+
+/* ==================================================
+   CAMPO DE JOGO
+   Este bloco define o tamanho, a borda, o fundo e o
+   brilho do canvas.
+   ================================================== */
+
+canvas {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  border: 2px solid #22d3ee;
+  border-radius: 16px;
+  background: #070a18;
+  box-shadow:
+    0 0 12px rgba(34, 211, 238, 0.8),
+    0 0 35px rgba(34, 211, 238, 0.3);
+}
+
+
+/* ==================================================
+   DICA DE CONTROLES
+   Este bloco estiliza o texto abaixo do campo de jogo.
+   ================================================== */
+
+.controls {
+  margin-top: 12px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+
+/* ==================================================
+   TELA DE RESULTADO
+   Este bloco cria a tela escurecida e a janela que
+   aparece após a vitória ou derrota.
+   ================================================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+/* Esta classe é adicionada via JavaScript quando a
+   janela de resultado precisa ser exibida */
+.overlay.visible {
+  display: flex;
+}
+
+.message-box {
+  width: min(90vw, 430px);
+  padding: 30px;
+  border: 2px solid #a855f7;
+  border-radius: 18px;
+  background: #0f172a;
+  box-shadow:
+    0 0 20px rgba(168, 85, 247, 0.8),
+    0 0 50px rgba(168, 85, 247, 0.35);
+}
+
+.message-box h2 {
+  margin: 0 0 12px;
+  color: #f0abfc;
+  font-size: 34px;
+}
+
+.message-box p {
+  margin: 8px 0 20px;
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+
+
+/* ==================================================
+   BOTÃO DE REINICIAR
+   Este bloco estiliza o botão Jogar novamente.
+   ================================================== */
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  color: #07111e;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #67e8f9, #a78bfa);
+  box-shadow: 0 0 16px rgba(103, 232, 249, 0.6);
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+
+/* ==================================================
+   ADAPTAÇÃO PARA TELAS PEQUENAS
+   Este bloco diminui o texto e os espaçamentos
+   quando a largura da tela é pequena.
+   ================================================== */
+
+@media (max-width: 550px) {
+  .panel {
+    gap: 6px;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .controls {
+    font-size: 13px;
+  }
+}
